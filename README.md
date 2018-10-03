@@ -3,3 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Installation
 
 require repository moviesAPI-v2 running on localhost:8080
+npm install
+npm start
