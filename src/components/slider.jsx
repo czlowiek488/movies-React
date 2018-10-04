@@ -9,7 +9,7 @@ class Slider extends Component {
 
   render() {
     return (
-      <div className="list-group-item px-5">
+      <div className="px-5 m-2">
         <label>
           {this.props.title}: {this.props.get(this.state.value / 100)}
         </label>

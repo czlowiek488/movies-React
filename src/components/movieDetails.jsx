@@ -33,7 +33,6 @@ class movieDetails extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="container card mt-1">
         <div className="card-body">
@@ -77,6 +76,9 @@ class movieDetails extends Component {
                 </li>
                 <li>
                   <h6>Language:</h6> {this.props.movie.Language}
+                </li>
+                <li>
+                  <h6>Rating:</h6> {this.props.movie.imdbRating}
                 </li>
               </ul>
             </div>
