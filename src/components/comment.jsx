@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 class Comment extends Component {
   state = {}
+
+  getDate = () => {
+    const date = this.props.date.toLocaleString()
+    return date === 'Invalid Date' ? 'right now' : date
+  }
   render() {
     return (
       <div className="media-body card mt-3 ">
@@ -25,7 +30,7 @@ class Comment extends Component {
             className="float-right btn btn-secondary chip waves-effect waves-light small"
             dateTime="2017-03-28T21:27:07+00:00"
           >
-            {this.props.date.toLocaleString()}
+            {this.getDate()}
           </time>
         </div>
         <div className="card-block">
