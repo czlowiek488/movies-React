@@ -11,7 +11,6 @@ class movieDetails extends Component {
     const id = this.props.movie.imdbID
     const response = await fetch(`${apiUrl}/comment?imdbID=${id}`)
     const comments = await response.json()
-    console.log(comments)
     this.setState({ comments })
   }
 

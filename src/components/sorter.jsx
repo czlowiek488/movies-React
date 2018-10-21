@@ -10,17 +10,17 @@ class Sorter extends Component {
   render() {
     return (
       <div className="dropdown mx-3">
-        <a
+        <button
           className="btn btn-secondary dropdown-toggle"
           href="#"
-          role="button"
+          type="button"
           id="dropdownMenuLink"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
           {this.props.value}
-        </a>
+        </button>
 
         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
           {this.props.options.map((option, index) => (
