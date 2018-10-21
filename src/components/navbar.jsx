@@ -67,7 +67,7 @@ class Navbar extends Component {
               onClick={this.fetchMovie}
               className={this.getSearchButtonStyle()}
             >
-              find
+              add
             </button>
           </form>
         </div>
