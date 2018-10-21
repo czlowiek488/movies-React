@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/navbar'
 import Album from './components/album'
 import MovieDetails from './components/movieDetails'
+import apiUrl from './static/apiUrl'
 
 class App extends Component {
   state = {
@@ -12,7 +13,7 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const response = await fetch('http://localhost:8080/movies')
+    const response = await fetch(`${apiUrl}/movies`)
     const movies = await response.json()
     this.setState({ movies })
   }
