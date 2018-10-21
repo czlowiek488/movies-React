@@ -12,7 +12,6 @@ class Sorter extends Component {
       <div className="dropdown mx-3">
         <button
           className="btn btn-secondary dropdown-toggle"
-          href="#"
           type="button"
           id="dropdownMenuLink"
           data-toggle="dropdown"
