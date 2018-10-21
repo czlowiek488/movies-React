@@ -8,7 +8,7 @@ class Album extends Component {
     minimalYear: 0,
     minimalRating: 0,
     sortBy: 'Nothing',
-    sortDirection: 'Ascending'
+    sortDirection: 'Descending'
   }
 
   componentWillReceiveProps = props => this.setState({ movies: props.movies })
@@ -30,10 +30,11 @@ class Album extends Component {
       )
       .sort(
         (movie, secondMovie) =>
-          this.state.sortDirection === 'Ascending'
+          this.state.sortDirection === 'Descending'
             ? secondMovie[this.state.sortBy] - movie[this.state.sortBy]
             : movie[this.state.sortBy] - secondMovie[this.state.sortBy]
       )
+    console.log(displayedMovies)
     return (
       <div className="container">
         <Filter

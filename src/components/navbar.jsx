@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import apiUrl from '../static/apiUrl'
+
 class Navbar extends Component {
   state = {
     search: true,
@@ -6,7 +8,7 @@ class Navbar extends Component {
   }
 
   fetchMovie = async () => {
-    const movieResponse = await fetch('http://localhost:8080/movies', {
+    const movieResponse = await fetch(`${apiUrl}/movies`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

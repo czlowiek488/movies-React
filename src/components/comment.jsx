@@ -18,12 +18,14 @@ class Comment extends Component {
               />
             </a>
           </div>
-          <h6 className="media-heading float-left ml-2">aymene</h6>
+          <h6 className="media-heading float-left ml-2">
+            {this.props.username}
+          </h6>
           <time
             className="float-right btn btn-secondary chip waves-effect waves-light small"
             dateTime="2017-03-28T21:27:07+00:00"
           >
-            28 March 2017, 21 h 27 min
+            {this.props.date.toLocaleString()}
           </time>
         </div>
         <div className="card-block">

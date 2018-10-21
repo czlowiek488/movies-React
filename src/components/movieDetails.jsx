@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Comment from './comment'
 import NewComment from './newComment'
+import apiUrl from '../static/apiUrl'
 class movieDetails extends Component {
   state = {
     comments: []
@@ -8,8 +9,9 @@ class movieDetails extends Component {
 
   componentDidMount = async () => {
     const id = this.props.movie.imdbID
-    const response = await fetch(`http://localhost:8080/comment?imdbID=${id}`)
+    const response = await fetch(`${apiUrl}/comment?imdbID=${id}`)
     const comments = await response.json()
+    console.log(comments)
     this.setState({ comments })
   }
 
@@ -19,9 +21,10 @@ class movieDetails extends Component {
     this.setState({ comments })
     const body = {
       imdbID: this.props.movie.imdbID,
-      text: comment.text
+      text: comment.text,
+      username: comment.username
     }
-    const response = await fetch('http://localhost:8080/comment', {
+    const response = await fetch(`${apiUrl}/comment`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -29,7 +32,6 @@ class movieDetails extends Component {
       body: JSON.stringify(body)
     })
     const received = await response.json()
-    console.log(received)
   }
 
   render() {
@@ -85,7 +87,12 @@ class movieDetails extends Component {
           </div>
           <NewComment create={this.handleNewComment} />
           {this.state.comments.map((comment, index) => (
-            <Comment text={comment.text} key={index} />
+            <Comment
+              username={comment.username}
+              date={new Date(parseInt(comment.createdAt))}
+              text={comment.text}
+              key={index}
+            />
           ))}
         </div>
       </div>
